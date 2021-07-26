@@ -37,6 +37,7 @@ fi
 
 export PATH="$HOME/.poetry/bin:$HOME/Library/Python/3.8/bin:/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
+export SPARK_HOME='/usr/local/opt/apache-spark/'
 EOF
 
 # Install Poetry for python
