@@ -18,11 +18,13 @@ brew install pyenv
 pyenv install 3.9.4
 pyenv global 3.9.4
 echo <<'EOF' >> ~/.zshrc
+# Aliases
 alias python=/usr/bin/python3
 alias pip='pip3'
 alias add='git add'
-alias commit='git commit -m'
+alias checkout='git checkout'
 alias clone='git clone'
+alias commit='git commit -m'
 alias diff='git diff'
 alias gitgud='git reset --HARD'
 alias merge='git merge'
@@ -31,13 +33,21 @@ alias push='git push'
 alias pushup='git push upstream=origin'
 alias wrk='cd ~/repos'
 
+# Environment Variables
+#export SPARK_HOME="/usr/local/Cellar/apache-spark/3.1.2/libexec/"
+#export PATH="$HOME/.poetry/bin:/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home/bin:$HOME/Library/Python/3.8/bin:$SPARK_HOME:$HOME/.jenv/bin:$PATH"
+#export JAVA_HOME=$(/usr/libexec/java_home)
+#export PYTHONPATH="$SPARK_HOME/python:$PYTHONPATH"
+#export PYSPARK_DRIVER_PYTHON="jupyter"
+#export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+#export PYSPARK_PYTHON="python3"
+
+# Init env managers
+#eval "$(jenv init -)"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-export PATH="$HOME/.poetry/bin:$HOME/Library/Python/3.8/bin:/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
-export SPARK_HOME='/usr/local/opt/apache-spark/'
 EOF
 
 # Install Poetry for python
@@ -61,6 +71,8 @@ brew install --cask font-fira-code
 
 # Install Java
 brew install --cask java
+brew install adoptopenjdk11
+brew install jenv
 
 source ~/.zshrc
 
