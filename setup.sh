@@ -88,3 +88,6 @@ pip install virtualenv
 brew install git-lfs
 git lfs install
 git lfs pull
+
+# Install parquet-tools
+brew install parquet-tools
